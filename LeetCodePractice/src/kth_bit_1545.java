@@ -4,7 +4,7 @@ public class kth_bit_1545 {
         public char findKthBit(int n, int k) {
 
             if(k==1)
-                return'0';
+                return '0';
 
             int c = k;
             String s = "0";
@@ -12,8 +12,8 @@ public class kth_bit_1545 {
 
                 s = s + '1'+reverseStr(inverseStr(s));
             }
-
-            return s.charAt(c);
+            // k -> is position of index not index
+            return s.charAt(c-1);
 
         }
 
@@ -21,7 +21,8 @@ public class kth_bit_1545 {
         {
             String a = s;
             String res = "";
-            for(int i = 0; i< a.length()-1;i++){
+            // Missing last character
+            for(int i = 0; i< a.length();i++){
                 if(a.charAt(i) == '0')
                     res+='1';
                 else
@@ -50,3 +51,4 @@ public class kth_bit_1545 {
     }
 
 }
+//            System.out.println(s+", inverse : "+"\""+inverseStr(s)+"\""+" reverse : \""+reverseStr(s));
